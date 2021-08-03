@@ -24,17 +24,11 @@
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/jasmine_sprout/device.mk)
 
-# Inherit Pixel Extended special items
+# Inherit Lineage special items
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Define first api level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
-
-#TWRP
-include recovery/twrp/xiaomi/jasmine_sprout/twrp.mk
-
-#Gapps
-TARGET_GAPPS_ARCH = arm64
 
 # Device identifier
 PRODUCT_BRAND := Xiaomi
@@ -42,7 +36,3 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_NAME := lineage_jasmine_sprout
 PRODUCT_DEVICE := jasmine_sprout
 PRODUCT_MODEL := Mi A2
-
-# OFFICIAL SPICEOS Build
-
-SPICEOS_BUILDTYPE = OFFICIAL
