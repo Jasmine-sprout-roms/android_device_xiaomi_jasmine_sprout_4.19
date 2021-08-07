@@ -50,7 +50,6 @@ BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ3A.210705.001/7380771:user/relea
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
 CHERISH_BUILD_TYPE := OFFICIAL
-TARGET_INCLUDE_WIFI_EXT := true
 
 # Inherit from custom vendor.
 $(call inherit-product, vendor/xiaomi/MiuiCamera/config.mk)
@@ -66,3 +65,6 @@ TARGET_SUPPORTS_GOOGLE_RECORDER := true
 TARGET_INCLUDE_STOCK_ARCORE := false
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# Launcher
+USE_LAWNCHAIR := true
