@@ -25,7 +25,7 @@
 $(call inherit-product, device/xiaomi/jasmine_sprout/device.mk)
 
 # Inherit Lineage special items
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
 # Define first api level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
@@ -33,6 +33,36 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk
 # Device identifier
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := lineage_jasmine_sprout
+PRODUCT_NAME := cherish_jasmine_sprout
 PRODUCT_DEVICE := jasmine_sprout
 PRODUCT_MODEL := Mi A2
+
+# Build Description
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="redfin-user 11 RQ3A.210705.001 7380771 release-keys" \
+    PRODUCT_NAME="jasmine_sprout" \
+    TARGET_DEVICE="jasmine_sprout"
+
+# Build Fingerprint
+BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ3A.210705.001/7380771:user/release-keys"
+
+# Cherish Properties
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+CHERISH_BUILD_TYPE := OFFICIAL
+TARGET_INCLUDE_WIFI_EXT := true
+
+# Inherit from custom vendor.
+$(call inherit-product, vendor/xiaomi/MiuiCamera/config.mk)
+
+# Maintainer Props
+PRODUCT_GENERIC_PROPERTIES += \
+    ro.cherish.maintainer = Prashant Shukla
+
+# Gapps
+WITH_GMS := true
+TARGET_GAPPS_ARCH := arm64
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_INCLUDE_STOCK_ARCORE := false
+
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
