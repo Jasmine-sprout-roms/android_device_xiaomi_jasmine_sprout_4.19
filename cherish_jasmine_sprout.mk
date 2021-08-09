@@ -56,7 +56,7 @@ $(call inherit-product, vendor/xiaomi/MiuiCamera/config.mk)
 
 # Maintainer Props
 PRODUCT_GENERIC_PROPERTIES += \
-    ro.cherish.maintainer = Prashant Shukla
+    ro.cherish.maintainer = PrashantShukla
 
 # Gapps
 WITH_GMS := true
@@ -67,4 +67,9 @@ TARGET_INCLUDE_STOCK_ARCORE := false
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Launcher
+ifneq ($(WITH_GMS),true)
 USE_LAWNCHAIR := true
+endif
+
+SELINUX_IGNORE_NEVERALLOWS_ON_USER =true
+
