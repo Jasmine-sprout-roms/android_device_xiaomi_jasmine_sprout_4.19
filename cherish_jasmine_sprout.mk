@@ -75,3 +75,5 @@ endif
 
 SELINUX_IGNORE_NEVERALLOWS_ON_USER =true
 
+#TWRP
+include recovery/twrp/xiaomi/jasmine_sprout/twrp.mk
